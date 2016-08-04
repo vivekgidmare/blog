@@ -11,9 +11,9 @@ class PostsController < ApplicationController
   def create
     @post =Post.new(post_params)
     if @post.save
-      redirect_to @post
+      redirect_to @post , notice: "Hey Vivek! Your Article was successfully saved!"
     else
-      render 'new'
+      render 'new', notice: "Oh no,Vivek! I was unable to save your post"
     end
   end
 
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to @post
+      redirect_to @post, notice: "Hey! Your article successfuly saved!"
     else
       render 'new'
     end
