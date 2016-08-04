@@ -1,6 +1,6 @@
 == README
 
-Personal blog design
+Personal blog design-@vivekgidmare
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
