@@ -3,7 +3,9 @@
 <head>
 		<title> Vivek Designer-Part Designer,part developer</title>
 		<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<!-- <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"> -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
 		<!-- <link rel="stylesheet" type="text/css" href="css/application.css"></link> -->
   		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -11,7 +13,8 @@
 </head>
 <body>
 	<header id="main_navigation" class="clearfix">
-			<a href="#" class="name">Vivek Gidmare</a>
+			<!-- <a href="#" class="name">Vivek Gidmare</a> -->
+			<%= link_to "Vivek Gidmare",root_path, class: "name"%>
 			<nav>
 				<!-- <a href="articles.html">Articles</a> -->
 				<%= link_to "Articles", root_path %>
@@ -19,12 +22,21 @@
 				<a href="contact.html">Contact</a>
 			</nav>
 	</header>
-
-<!-- <%= link_to "Home",root_path %>	-->
 <!-- <%= link_to "New Post",new_post_path %> -->
 
+	<%= yield %>
 
-<%= yield %>
-
+	<!-- footer -->
+	<footer id="main_footer">
+			<p class="copyright">&copy;2016 Vivek Gidmare</p>		
+			<nav>
+				<a href="https://twitter.com/bibekgi" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>
+</a>
+				<a href="http://github.com/vivekgidmare" target="_blank"><i class="fa fa-github" aria-hidden="true"></i>
+</a>
+				<a href="http://facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i>
+</a>
+			</nav>
+		</footer>
 </body>
 </html>

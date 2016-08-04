@@ -1,9 +1,31 @@
-<h1> <%= @post.title %></h1>
-<div> 
-	<%=  @post.body %>
+<div id="post_show_content" class="skinny_wrapper wrapper_padding">
+	<header class="ps_header">
+		<p class="post_show_date"><%= @post.created_at.strftime("%A, %b %d") %></p>
+		<h1 class="psh"><a href="#"><%= @post.title %></a></h1>
+		<hr class="post_hr">
+	</header>
+	<div id="content">
+		<p><%=  @post.body %></p>
+		<br>
+		<br>
+		<hr>			
+		
+		<%= link_to "Edit Post",edit_post_path(@post), class: "button" %>
+
+		<%= link_to "Delete ",post_path(@post),method: :delete, data: {confirm: "Are you sure you want to delete this article?"} ,class: "button"  %>
+	</div>
+	<hr>
+	<!-- share box -->
+	<div id="share_box">
+		<p class="sb_p">Share</p>
+		<a onclick="javascript:window.open('http://www.twitter.com/share?text= <%= @post.title %> by @bibekgi - &amp; url=<%= url_for([@post, {only_path:false}])%>','_blank','width=800,height=500,top=200,left=300');void(0);">
+			<i class="fa fa-twitter" aria-hidden="true"></i>
+		</a>
+		<a href="http://facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i>
+		</a>
+		<a href="http://google.com" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i>
+		</a>
+	</div>
+	<hr>
 </div>
 
-<br>
-<%= link_to "Edit Post",edit_post_path(@post) %>
-
-<%= link_to "Delete ",post_path(@post),method: :delete, data: {confirm: "Are you sure you want to delete this article?"}  %>

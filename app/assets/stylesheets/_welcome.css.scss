@@ -29,14 +29,16 @@ hr {
 h3 {
 	font-size: 1.35em;
 	font-weight: 400;
-	margin-bottom: .5em;
+	margin-bottom: .1em;
 }
 a{
 	text-decoration: none;
 	color:  #424652;
+	margin: 0 1rem;
+	font-size: 1rem;
 	&:hover {
 			color: #8bc6db;
-		}
+	}
 }
 .date {
 	font-size: .85em;
@@ -45,8 +47,4 @@ a{
 }
 p {
 	margin: 0 0 .75em 0;
-}
-.about {
-	padding: 0 7.5% 0 0;
-
 }
