@@ -35,10 +35,10 @@ class ProjectsController < ApplicationController
   private
 
   def project_param
-    # params.require(:project).permit(:title,:decription,:link,:slug)
-    params.require(:project).permit(:title,:decription,:link)
+    params.require(:project).permit(:title,:decription,:link,:slug)
+    # params.require(:project).permit(:title,:decription,:link)
   end
   def find_project
-    @project =Project.find(params[:id])
+    @project =Project.friendly.find(params[:id])
   end
 end
