@@ -1,6 +1,28 @@
+<!-- Body -->
+<h1 class="page_title">Stuff I've Written</h1>
+<div id="posts_wrapper" class="skinny_wrapper">
+	<!-- posts -->
 <% @posts.each do |post| %>
-	<h2> <%= post.title %></h2>
-	<div><%=  truncate(post.body, :length => 35) %></div>	
-	<br>
-	<%=  link_to "Read Post",post %>
+	<div class="post">
+		<p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
+		<h2 class="post_h"><%= link_to post.title, post %></a></h2>
+		<!-- <div><%=  truncate(post.body, :length => 35) %></div>	 -->
+		<%=  link_to "Read Post",post %>
+		<hr class="post_hr">
+		
+	</div>
 <% end %>
+
+
+	
+
+	
+
+</div>
+
+	<div class="pagination">
+		<span class="previous_page diabled">Previous</span>
+		<em class="current">1</em>
+		<a class="second" href="#">2</a>
+		<a class="next_page" href="#">Next</a>
+	</div>
