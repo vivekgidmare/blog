@@ -25,18 +25,23 @@ class ProjectsController < ApplicationController
   end
 
   def update
-
+    if @project.update(project_param)
+      redirect_to @project, notice: "Hey! Your Project successfuly updated!"
+    else
+      render 'edit'
+    end
   end
 
   def destroy
-
+    @project.destroy
+    redirect_to root_path
   end
 
   private
 
   def project_param
-    params.require(:project).permit(:title,:decription,:link,:slug)
-    # params.require(:project).permit(:title,:decription,:link)
+    params.require(:project).permit(:title,:description,:link,:slug)
+    # params.require(:project).permit(:title,:description,:link)
   end
   def find_project
     @project =Project.friendly.find(params[:id])

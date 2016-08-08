@@ -5,10 +5,18 @@
 		<hr class="post_hr">
 	</header>
 	<div id="content">
-		<%= @project.description %>
+			
+			<p><%= markdown @project.description %>
+		<br>
+		<br>
+
 		<div class="button_wrapper">
 		<a href="<%= @project.link%>" class="project_button" target="_blank">Visit <%= @project.title %></a>
 		</div>
+		<hr>
+		<%= link_to "Edit Project",edit_project_path(@project), class: "button" %>
+
+		<%= link_to "Delete ",project_path(@project),method: :delete, data: {confirm: "Are you sure you want to delete this Project?"} ,class: "button"  %>
 	</div>
 	<hr>			
 </div>
